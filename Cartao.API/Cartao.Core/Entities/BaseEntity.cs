@@ -1,14 +1,22 @@
 namespace ParanaBanco.Cartoes.Core.Entities
 {
-    public abstract class BaseEntity
+    public class BaseEntity
     {
-        protected BaseEntity()
+        public BaseEntity()
         {
-            Id = Guid.NewGuid();
-            CriadoEm = DateTime.UtcNow;
+            Id = Id = Guid.NewGuid();
+            CreatAt = DateTime.Now;
+            IsDelete = false;
         }
 
         public Guid Id { get; set; }
-        public DateTime CriadoEm { get; set; }
+        public DateTime CreatAt { get; set; }
+        public bool IsDelete { get; set; }
+
+
+        public void SetAsDelete()
+        {
+            IsDelete = true;
+        }
     }
 }
