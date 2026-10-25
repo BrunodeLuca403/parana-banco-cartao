@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Cartao.API/Cartao.API.csproj" />
+  <Project Path="Cartao.Application/Cartao.Application.csproj" Id="66fae9a0-f86c-4322-b327-c9587324bfd5" />
+  <Project Path="Cartao.Core/Cartao.Core.csproj" Id="618dd075-b679-41ec-9214-049aa2eedafd" />
+  <Project Path="Cartao.Infrastructure/Cartao.Infrastructure.csproj" Id="7c12820c-2d64-431f-acfd-d1c405b4b875" />
+  <Project Path="Cartao.Teste/Cartao.Teste.csproj" Id="21d1f980-91fb-4187-bb4d-1488ec643d1a" />
+</Solution>
