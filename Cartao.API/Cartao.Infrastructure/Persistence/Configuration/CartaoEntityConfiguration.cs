@@ -26,7 +26,7 @@ namespace ParanaBanco.Cartoes.Infrastructure.Persistence.Configuration
             builder.Property(x => x.Bandeira)
                 .IsRequired();
 
-            builder.Property(x => x.CriadoEm)
+            builder.Property(x => x.CreatAt)
                 .HasColumnType("datetime")
                 .IsRequired();
 

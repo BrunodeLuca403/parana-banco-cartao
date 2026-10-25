@@ -16,7 +16,11 @@ namespace ParanaBanco.Cartoes.Infrastructure.Repository
 
         public async Task AdicionarAsync(IEnumerable<Cartao> cartoes)
         {
-            await _db.Cartoes.AddRangeAsync(cartoes);
+            foreach (var cartao in cartoes)
+            {
+                await _db.Cartoes.AddAsync(cartao);
+            }
+
             await _db.SaveChangesAsync();
         }
 
