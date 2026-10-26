@@ -12,7 +12,7 @@ using ParanaBanco.Cartoes.Infrastructure.Persistence;
 namespace ParanaBanco.Cartoes.Infrastructure.Migrations
 {
     [DbContext(typeof(CartaoDbContext))]
-    [Migration("20261025211357_InitialCreate")]
+    [Migration("20261026222252_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -34,11 +34,14 @@ namespace ParanaBanco.Cartoes.Infrastructure.Migrations
                     b.Property<int>("Bandeira")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CriadoEm")
+                    b.Property<DateTime>("CreatAt")
                         .HasColumnType("datetime");
 
                     b.Property<Guid>("IdCliente")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("Limite")
                         .HasColumnType("decimal(18,2)");

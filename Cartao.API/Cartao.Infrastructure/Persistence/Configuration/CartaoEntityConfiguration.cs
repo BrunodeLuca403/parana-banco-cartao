@@ -30,6 +30,9 @@ namespace ParanaBanco.Cartoes.Infrastructure.Persistence.Configuration
                 .HasColumnType("datetime")
                 .IsRequired();
 
+            builder.Property(x => x.IsDelete)
+                .IsRequired();
+
             builder.HasIndex(x => x.IdCliente);
         }
     }

@@ -20,7 +20,8 @@ namespace ParanaBanco.Cartoes.Infrastructure.Migrations
                     Numero = table.Column<string>(type: "char(16)", nullable: false),
                     Limite = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Bandeira = table.Column<int>(type: "int", nullable: false),
-                    CriadoEm = table.Column<DateTime>(type: "datetime", nullable: false)
+                    CreatAt = table.Column<DateTime>(type: "datetime", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

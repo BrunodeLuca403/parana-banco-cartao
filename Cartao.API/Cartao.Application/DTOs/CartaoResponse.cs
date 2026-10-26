@@ -10,7 +10,7 @@ namespace ParanaBanco.Cartoes.Application.DTOs
         public string Numero { get; set; } = string.Empty;
         public decimal Limite { get; set; }
         public BandeiraCartao Bandeira { get; set; }
-        public DateTime CriadoEm { get; set; }
+        public DateTime CreatAt { get; set; }
 
         public static CartaoResponse FromEntity(Cartao cartao) => new()
         {
@@ -19,7 +19,7 @@ namespace ParanaBanco.Cartoes.Application.DTOs
             Numero = cartao.Numero,
             Limite = cartao.Limite,
             Bandeira = cartao.Bandeira,
-            CriadoEm = cartao.CreatAt
+            CreatAt = cartao.CreatAt
         };
     }
 }
