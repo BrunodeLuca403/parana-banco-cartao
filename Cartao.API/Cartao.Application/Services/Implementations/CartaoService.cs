@@ -55,9 +55,7 @@ namespace ParanaBanco.Cartoes.Application.Services.Implementations
             var cartoes = new List<Cartao>();
             for (var i = 0; i < evento.QuantidadeCartoes; i++)
             {
-                // Alterna a bandeira entre os cartões emitidos.
-                var bandeira = i % 2 == 0 ? BandeiraCartao.Visa : BandeiraCartao.Mastercard;
-                cartoes.Add(Cartao.Emitir(evento.ClienteId, evento.LimitePorCartao, bandeira));
+                cartoes.Add(Cartao.Emitir(evento.ClienteId, evento.LimitePorCartao, BandeiraCartao.Visa));
             }
 
             await _cartaoRepository.AdicionarAsync(cartoes);
