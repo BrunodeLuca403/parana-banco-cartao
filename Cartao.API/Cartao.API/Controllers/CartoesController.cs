@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using ParanaBanco.Cartoes.Application.Common;
 using ParanaBanco.Cartoes.Application.DTOs;
 using ParanaBanco.Cartoes.Application.Services.Interface;
 
@@ -16,14 +17,16 @@ namespace ParanaBanco.Cartoes.API.Controllers
         }
 
         [HttpGet("{clienteId:guid}")]
-        public async Task<ActionResult<IReadOnlyList<CartaoResponse>>> ListarPorCliente([FromRoute] Guid clienteId)
+        public async Task<ActionResult<ResultViewModel<List<CartaoResponse>>>> ListarPorCliente([FromRoute] Guid clienteId)
         {
             var resultado = await _cartaoService.ListarPorClienteAsync(clienteId);
 
             if (!resultado.IsSuccess)
-                return NotFound(resultado.Error);
+            {
+                return NotFound(ResultViewModel<List<CartaoResponse>>.Failure(resultado.Error));
+            }
 
-            return Ok(resultado.Value);
+            return Ok(ResultViewModel<List<CartaoResponse>>.Success(resultado.Value));
         }
     }
 }

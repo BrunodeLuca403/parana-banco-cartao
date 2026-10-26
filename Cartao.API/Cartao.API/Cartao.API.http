@@ -1,6 +1,7 @@
 @Cartao.API_HostAddress = http://localhost:5139
 
-GET {{Cartao.API_HostAddress}}/weatherforecast/
+### Listar cartões de um cliente
+GET {{Cartao.API_HostAddress}}/api/v1/cartoes/{AB929A0F-EDFE-4DD5-8A87-27448903AC8F}
 Accept: application/json
 
 ###
