@@ -35,8 +35,9 @@ A partir do evento `PropostaGerada`, o serviço emite os cartões conforme o res
 | Aprovada, 1 cartão | 1 cartão com o limite informado |
 | Aprovada, até 2 cartões | 2 cartões, cada um com o limite informado |
 
-Cada cartão recebe número gerado, limite e bandeira (alternando Visa/Mastercard).
-O serviço confia no resultado enviado pela Proposta — não recalcula o score.
+Cada cartão recebe um número gerado e o limite informado. O serviço confia no
+resultado enviado pela Proposta — não recalcula o score. A quantidade de cartões e o
+limite vêm do evento; a bandeira não é regra do desafio (os cartões são emitidos como Visa).
 
 ## Mensageria
 
